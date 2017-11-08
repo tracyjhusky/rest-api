@@ -1,0 +1,27 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "A RESTful API for getting the top posts of a given subreddit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracyjhusky/rest-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "reddit"
+  ],
+  "author": "James Tracy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tracyjhusky/rest-api/issues"
+  },
+  "homepage": "https://github.com/tracyjhusky/rest-api#readme",
+  "dependencies": {
+    "hapi": "^16.6.2"
+  }
+}
