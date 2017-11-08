@@ -4,6 +4,7 @@
   "description": "A RESTful API for getting the top posts of a given subreddit.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js";
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
