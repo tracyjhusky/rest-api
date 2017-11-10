@@ -4,7 +4,7 @@
   "description": "A RESTful API for getting the top posts of a given subreddit.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js";
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/tracyjhusky/rest-api#readme",
   "dependencies": {
-    "hapi": "^16.6.2"
+    "hapi": "^16.6.2",
+    "request": "^2.83.0",
+    "wreck": "^14.0.2"
   }
 }

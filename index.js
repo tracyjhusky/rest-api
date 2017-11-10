@@ -2,12 +2,45 @@
 
 
 const Hapi = require('hapi');
+const Wreck = require('wreck');
 
 const PORT = 3000;
 const HOST = 'localhost'
 
+function simplify(raw) {
+  const children = raw.data.children;
+  const list = [];
+  for(let i  = 0; i < children.length; i++) {
+    const data = children[i].data;
+    list.push(
+      {
+        subreddit: data.subreddit,
+        title: data.title,
+        score: data.score,
+        thumbnail: data.thumbnail,
+        author: data.author,
+        num_comments: data.num_comments,
+      }
+    );
+  }
+  return list;
+}
 
-function requestHandler(request, reply) {
+async function getFrom (subreddit, limit) {
+  const { res, payload } = await Wreck.get(`https://www.reddit.com/r/${subreddit}/top/.json?limit=${limit}`);
+  return JSON.parse(payload.toString());
+}
+
+function getRequestHandler(request, reply) {
+  const subreddit = request.params.subreddit;
+  const limit = request.query.limit;
+
+  getFrom(subreddit, limit)
+  .then(function (raw) {
+    const simple = simplify(raw);
+    console.log(simple);
+    reply(simple);
+  });
 
 }
 
@@ -16,8 +49,8 @@ server.connection({ port: PORT, host: HOST});
 
 server.route({
     method: 'GET',
-    path: '/r/{name}',
-    handler: requestHandler
+    path: '/r/{subreddit}',
+    handler: getRequestHandler
 });
 
 server.start((err) => {
