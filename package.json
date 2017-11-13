@@ -2,10 +2,10 @@
   "name": "rest-api",
   "version": "1.0.0",
   "description": "A RESTful API for getting the top posts of a given subreddit.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "mocha test/test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,13 @@
   "homepage": "https://github.com/tracyjhusky/rest-api#readme",
   "dependencies": {
     "hapi": "^16.6.2",
+    "mocha": "^4.0.1",
     "request": "^2.83.0",
     "wreck": "^14.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-spies": "^0.7.1",
+    "nyc": "^11.3.0"
   }
 }
