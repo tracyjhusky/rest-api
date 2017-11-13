@@ -35,12 +35,18 @@ function addPost(post) {
 
   const score = document.createElement("div");
   score.setAttribute("class", "score");
-  score.appendChild(document.createTextNode(post.score));
+  score.appendChild(document.createTextNode("▲" + post.score));
+
+  const info = document.createElement("div");
+  info.setAttribute("class", "info");
+  info.appendChild(document.createTextNode("posted by u/" + post.author
+    + " | " + post.num_comments + " comments"));
 
   const newPost = document.createElement("div");
   newPost.setAttribute("class", "post");
   newPost.appendChild(title);
   newPost.appendChild(score);
+  newPost.appendChild(info);
 
   document.getElementById("container").appendChild(newPost);
 }

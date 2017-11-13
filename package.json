@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha test/test.js --exit"
+    "test": "nyc mocha test/test.js --exit"
   },
   "repository": {
     "type": "git",

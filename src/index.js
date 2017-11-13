@@ -26,20 +26,28 @@ function simplify(raw) {
   return list;
 }
 
-async function getFrom (subreddit, limit, Wreck) {
+async function getFrom (subreddit, limit, wreck) {
+  if(wreck != undefined) {
+    wreck.get(`https://www.reddit.com/r/${subreddit}/top/.json?limit=${limit}`)
+  }
   const { res, payload } = await Wreck.get(`https://www.reddit.com/r/${subreddit}/top/.json?limit=${limit}`);
   return JSON.parse(payload.toString());
 }
 
-function getRequestHandler(request, reply, getFrom) {
+function getRequestHandler(request, reply, get) {
   const subreddit = request.params.subreddit;
   const limit = request.query.limit;
 
-  getFrom(subreddit, limit)
-  .then(function (raw) {
-    const simple = simplify(raw);
-    reply(simple);
-  });
+  if(get != undefined) {
+    get(subreddit, limit);
+  }
+  else {
+    getFrom(subreddit, limit)
+    .then(function (raw) {
+      const simple = simplify(raw);
+      reply(simple);
+    });
+  }
 
 }
 

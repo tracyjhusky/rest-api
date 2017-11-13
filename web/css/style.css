@@ -27,3 +27,8 @@ body {
 .input {
   text-align: center;
 }
+
+.info {
+  color: #333333;
+  font-size: 12px;
+}
