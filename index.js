@@ -50,7 +50,13 @@ server.connection({ port: PORT, host: HOST});
 server.route({
     method: 'GET',
     path: '/r/{subreddit}',
-    handler: getRequestHandler
+    handler: getRequestHandler,
+    config: {
+        cors: {
+            origin: ['*'],
+            additionalHeaders: ['cache-control', 'x-requested-with']
+        }
+    }
 });
 
 server.start((err) => {

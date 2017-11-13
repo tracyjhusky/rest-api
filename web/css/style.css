@@ -1,0 +1,25 @@
+body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+.post {
+  background-color: #eeeeee;
+  padding: 10px;
+  margin: 10px;
+}
+
+.title {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thumbnail {
+  width: 100px;
+  border: 2px solid white;
+  margin-right: 10px;
+}
+
+.score {
+  font-size: 20px;
+}
