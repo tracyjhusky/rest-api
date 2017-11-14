@@ -5,7 +5,7 @@ const Hapi = require('hapi');
 const Wreck = require('wreck');
 
 const PORT = process.env.PORT || 3000;
-const HOST = 'localhost'
+const HOST = '0.0.0.0'
 
 function simplify(raw) {
   const children = raw.data.children;
