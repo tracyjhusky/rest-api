@@ -5,7 +5,9 @@ Hi, I'm James Tracy, and this is my implementation of a RESTful API for retrievi
 My API can be found [here](https://safe-eyrie-78735.herokuapp.com/).
 
 The user interface that calls this API is located [here](https://blooming-woodland-16151.herokuapp.com/).
+
 And...
+
 The the repository of the ui can be found [here](https://github.com/tracyjhusky/rest-api-web).
 
 ### Frameworks & Utilities
@@ -51,9 +53,9 @@ are displayed on Reddit. Again that interface is hosted [here](https://blooming-
 
 ### Final Remarks
 
-This was a fun project. I learned a lot of new things, as well as reinforced quite a
+This was a fun project. I learned a lot of new things, and reinforced quite a
 few familiar concepts as well.
 
-Thank you for your time.
+Thank you for your time!
 
 -James Tracy
