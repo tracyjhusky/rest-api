@@ -2,7 +2,7 @@
 
 Hi, I'm James Tracy, and this is my implementation of a RESTful API for retrieving the top posts of a given subreddit.
 
-My application can be found [here](https://id.heroku.com/login).
+My API can be found [here](https://safe-eyrie-78735.herokuapp.com/).
 
 ### Frameworks & Utilities
  - Hapi.js
